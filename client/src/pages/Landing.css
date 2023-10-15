@@ -1,0 +1,35 @@
+:root {
+  --ember: rgb(107, 32, 0);
+  --vermillion: rgb(196, 66, 26);
+  --sandstone: rgb(249, 143, 69);
+  --dusty: rgb(254, 222, 197);
+  --mist: rgb(153, 207, 205);
+  --aqua: rgb(18, 144, 142);
+  --teal: rgb(22, 89, 74);
+  --dropshadow: rgba(0, 0, 0, 0.5);
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.arrow {
+  position: absolute;
+  color: var(--sandstone);
+}
+
+@media screen and (min-width: 575px) {
+}
+
+@media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 992px) {
+}
+
+@media screen and (min-width: 1200px) {
+}
+
+@media screen and (min-width: 1400px) {
+}

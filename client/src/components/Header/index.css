@@ -1,0 +1,224 @@
+/* Header.css */
+:root {
+  --dusty: rgb(254, 222, 197);
+  --sandstone: rgb(251, 171, 114);
+  --vermillion: rgb(196, 66, 26);
+  --ember: rgb(107, 32, 0);
+  --mist: rgb(153, 207, 205);
+  --aqua: rgb(18, 144, 142);
+  --mistAqua: rgb(74, 159, 158);
+  --aquaTeal: rgb(9, 109, 99);
+  --teal: rgb(22, 89, 74);
+  --dropshadow: rgba(0, 0, 0, 0.5);
+}
+
+/* Kindling header */
+h1 {
+  font-size: 2rem;
+  color: var(--vermillion);
+  margin: 5px;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: var(--dusty);
+}
+
+/* TODO css for desktop navigation */
+.navWord {
+  font-size: 1rem;
+  color: var(--sandstone);
+}
+
+.navWord:hover {
+  color: var(--vermillion);
+  border-bottom: solid 2px var(--vermillion);
+}
+
+.themeButton {
+  width: auto;
+  color: var(--sandstone);
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  padding: 0px;
+}
+
+.themeButton:hover {
+  color: var(--vermillion);
+}
+
+/* Hamburger.css */
+.hamBorder {
+  height: 35px;
+  width: 35px;
+  position: absolute;
+  right: 3px;
+  top: 3px;
+  z-index: 9;
+}
+
+.hamTop {
+  width: 25px;
+  height: 3px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: var(--vermillion);
+  display: inline-block;
+}
+
+.hamMiddle {
+  width: 20px;
+  height: 3px;
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  background-color: var(--vermillion);
+  display: inline-block;
+}
+
+.hamBottom {
+  width: 25px;
+  height: 3px;
+  position: absolute;
+  top: 30px;
+  right: 10px;
+  background-color: var(--vermillion);
+  display: inline-block;
+}
+
+/* Used to control the hamburger menu animation */
+.menu {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  display: none;
+}
+
+.ribbonOne {
+  width: 100vw;
+  height: 20vh;
+  position: absolute;
+  top: 0vh;
+  left: 100vw;
+  background-color: var(--mist);
+}
+
+.ribbonTwo {
+  width: 100vw;
+  height: 20vh;
+  position: absolute;
+  top: 20vh;
+  left: 100vw;
+  background-color: var(--mistAqua);
+}
+
+.ribbonThree {
+  width: 100vw;
+  height: 20vh;
+  position: absolute;
+  top: 40vh;
+  left: 100vw;
+  background-color: var(--aqua);
+}
+
+.ribbonFour {
+  width: 100vw;
+  height: 20vh;
+  position: absolute;
+  top: 60vh;
+  left: 100vw;
+  background-color: var(--aquaTeal);
+}
+
+.ribbonFive {
+  width: 100vw;
+  height: 20vh;
+  position: absolute;
+  top: 80vh;
+  left: 100vw;
+  background-color: var(--teal);
+}
+
+.themeButtonMobile {
+  color: var(--vermillion);
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  opacity: 1;
+}
+
+.menuWord {
+  font-size: 36px;
+  color: var(--vermillion);
+}
+
+.leftUp {
+  position: absolute;
+  top: 14vh;
+  left: 20px;
+}
+
+.rightUp {
+  position: absolute;
+  top: 14vh;
+  right: 20px;
+}
+
+.leftDown {
+  position: absolute;
+  top: 14vh;
+  left: 20px;
+}
+
+.rightDown {
+  position: absolute;
+  top: 14vh;
+  right: 20px;
+}
+
+.contact {
+  position: absolute;
+  top: 13vh;
+  left: 20px;
+}
+
+.Links {
+  position: relative;
+  top: 20vh;
+  left: 0;
+  margin: 0 20px;
+}
+
+.blogAref {
+  color: var(--ember);
+  font-size: 1.1rem;
+  padding-top: 5px;
+}
+
+.aboutAref {
+  color: var(--ember);
+  font-size: 1.2rem;
+  padding-top: 20px;
+}
+
+@media screen and (min-width: 575px) {
+}
+
+@media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 992px) {
+}
+
+@media screen and (min-width: 1200px) {
+}
+
+@media screen and (min-width: 1400px) {
+}
