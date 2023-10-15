@@ -23,8 +23,8 @@ import Terms from "./components/Modal/Terms";
 import Privacy from "./components/Modal/Privacy";
 
 const httpLink = createHttpLink({
-  uri: "http://localhost:3001/graphql",
-  // uri: "/graphql",
+  // uri: "http://localhost:3001/graphql",
+  uri: "/graphql",
 });
 
 const client = new ApolloClient({
