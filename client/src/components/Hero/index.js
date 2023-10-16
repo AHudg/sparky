@@ -29,11 +29,11 @@ function Hero({
           ) : (
             <img src={src} className="mediaHero"></img>
           )}
-          {/* <div className={orientation}>
+          <div className={orientation}>
             <p>{firstLine}</p>
             <p>{secondLine}</p>
           </div>
-          <img src={accent} className={accentClass} /> */}
+          <img src={accent} className={accentClass} />
         </div>
         <div className="col-12 col-lg-5 row text-center justify-content-center coa">
           <p className="col-12">

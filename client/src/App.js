@@ -19,11 +19,8 @@ import Landing from "./pages/Landing";
 import About from "./pages/About";
 import Blog from "./pages/Blog";
 import Contact from "./components/Contact";
-import Terms from "./components/Modal/Terms";
-import Privacy from "./components/Modal/Privacy";
 
 const httpLink = createHttpLink({
-  // uri: "http://localhost:3001/graphql",
   uri: "/graphql",
 });
 
@@ -78,7 +75,7 @@ function App() {
 
               <Routes>
                 <Route
-                  path="/sparks"
+                  path="/"
                   element={
                     <Landing
                       screenWidth={screenWidth}

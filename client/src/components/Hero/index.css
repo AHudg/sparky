@@ -1,37 +1,6 @@
 /* Video Section / Intro Styling */
-.sectHero {
-  /* z-index: 9; */
-  position: relative;
-  /* height: 100vh;
-  width: 100vw; */
-}
-
 .collage {
-  /* position: relative;
-  height: 75vh;
-  width: 100vw; */
-}
-
-.squareOne {
-  width: 250px;
-  height: 300px;
-  background-color: var(--vermillion);
-  border-radius: 50px;
-  position: absolute;
-  top: 5%;
-  left: 7%;
-  z-index: 1;
-}
-
-.squareTwo {
-  width: 150px;
-  height: 150px;
-  background-color: var(--mist);
-  border-radius: 30px;
-  position: absolute;
-  top: 65%;
-  left: 14%;
-  z-index: 3;
+  position: relative;
 }
 
 .mediaHero {
@@ -39,6 +8,7 @@
   max-width: 100vw;
   border-top: 5px solid var(--vermillion);
   border-bottom: 5px solid var(--vermillion);
+  display: block;
 }
 
 .ornamentHero {
@@ -47,11 +17,8 @@
   filter: drop-shadow(-4px 4px 0px var(--teal));
   font-weight: bold;
   line-height: 80%;
-  letter-spacing: 0px;
-  z-index: 1;
-  position: absolute;
+  position: relative;
   bottom: 1.5rem;
-  width: 95vw;
   z-index: 5;
 }
 
@@ -60,13 +27,10 @@
 }
 
 .flame {
-  display: inline;
+  width: 150px;
+  filter: drop-shadow(-3px 3px 4px var(--dropshadow));
   position: absolute;
   bottom: 0rem;
-  width: 150px;
-  padding: 0;
-  overflow-x: hidden;
-  filter: drop-shadow(-3px 3px 4px var(--dropshadow));
   z-index: 4;
 }
 
@@ -114,11 +78,38 @@
   .ornamentHero {
     font-size: 3rem;
   }
+
+  .mediaHero {
+    max-height: 85vh;
+  }
 }
 
 @media screen and (min-width: 540px) {
   .collage {
-    width: 540px;
+    width: 100vw;
+    height: 65vh;
+  }
+
+  .squareOne {
+    width: 250px;
+    height: 300px;
+    background-color: var(--vermillion);
+    border-radius: 50px;
+    position: absolute;
+    top: 2vh;
+    left: 7vw;
+    z-index: 1;
+  }
+
+  .squareTwo {
+    width: 150px;
+    height: 150px;
+    background-color: var(--mist);
+    border-radius: 30px;
+    position: absolute;
+    top: 35vh;
+    left: 13vw;
+    z-index: 3;
   }
 
   .mediaHero {
@@ -126,21 +117,26 @@
     border: none;
     border-radius: 50px;
     position: absolute;
-    top: 15%;
-    right: 7.5%;
+    top: 12vh;
+    right: 7.5vw;
     z-index: 2;
   }
 
   .ornamentHero {
     position: absolute;
-    bottom: 0px;
-    right: 7.5%;
+    bottom: -30px;
+    right: 7.5vw;
   }
 
   .flame {
-    bottom: 0px;
-    right: 7.5%;
+    bottom: -50px;
     width: 175px;
+  }
+}
+
+@media screen and (min-width: 540px) and (max-width: 768px) {
+  .coa {
+    margin-top: 50px;
   }
 }
 
@@ -170,18 +166,17 @@
 
   .ornamentHero {
     right: 15%;
+    bottom: 0;
+  }
+
+  .flame {
+    width: 225px;
+    right: 0;
+    bottom: -30px;
   }
 }
 
 @media screen and (min-width: 992px) {
-  .collage {
-    /* width: 100vw;
-    height: 90vh; */
-    width: auto;
-    right: 5px;
-    margin: auto;
-  }
-
   .squareOne {
     height: 250px;
     width: 250px;
@@ -192,54 +187,49 @@
   }
 
   .squareTwo {
-    height: 200px;
-    width: 200px;
     opacity: 0.75;
-    top: 5%;
-    left: 15%;
+    top: 2vh;
+    left: 12vw;
     z-index: 3;
   }
 
   .mediaHero {
     height: auto;
-    left: 10%;
-    top: 12.5%;
+    max-width: 500px;
+    left: 8vw;
+    top: 8vh;
     z-index: 1;
   }
 
   .ornamentHero {
     font-size: 75px;
-    top: 7.5%;
-    right: 0%;
+    top: 5vh;
+    right: -10vw;
   }
 
   .flame {
     width: 300px;
-    right: 0%;
-    /* bottom: 5%; */
-    opacity: 0.5;
+    right: -20vw;
+    bottom: -10vh;
     z-index: 1;
-  }
-
-  .coa {
-    margin: 0;
+    opacity: 0.75;
   }
 
   .coa p {
-    width: 325px;
     font-size: 18px;
-    /* position: absolute;
-    top: 29%;
-    right: 7.5%;
-    z-index: 2; */
+    width: 325px;
+    position: absolute;
+    top: 30vh;
+    right: 5vw;
+    z-index: 2;
   }
 
   .coa a {
-    /* position: absolute;
     width: 150px;
-    top: 47%;
-    right: 15%;
-    z-index: 2; */
+    position: absolute;
+    top: 50vh;
+    right: 15vw;
+    z-index: 2;
   }
 }
 
