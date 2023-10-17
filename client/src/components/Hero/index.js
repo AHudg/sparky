@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./index.css";
+
+import gsap from "gsap";
 
 function Hero({
   media,
@@ -11,6 +13,16 @@ function Hero({
   accent,
   screenWidth,
 }) {
+  const [rotate, setRotate] = useState(0);
+
+  // useEffect(() => {
+  //   const rotateInterval = setInterval((screenWidth) => {
+  //     if (screenWidth > 540) {
+  //       gsap.to(".squareOne", { rotation: "30deg" });
+  //     }
+  //   }, 1000);
+  // });
+
   return (
     <section className={screenWidth > 540 && "container"}>
       <div className="row sectHero">

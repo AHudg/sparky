@@ -9,17 +9,6 @@ import vertThree from "../../assets/vertThree.png";
 function SidebarTwo({ screenWidth, breakpoint }) {
   const [scroll, setScroll] = useState(0);
 
-  const handleScroll = () => {
-    const scrollLocale = window.scrollY;
-    setScroll(scrollLocale);
-    console.log(scrollLocale);
-    if (scrollLocale > 200) {
-      gsap.to(".twoRibOne", { x: "50vw", duration: 2 });
-      gsap.to(".twoRibTwo", { x: "-50vw", duration: 2 });
-      gsap.to(".twoRibThree", { x: "100vw", duration: 2 });
-    }
-  };
-
   useEffect(() => {
     window.addEventListener("scroll", handleScroll, { passive: true });
 
@@ -27,6 +16,44 @@ function SidebarTwo({ screenWidth, breakpoint }) {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [scroll]);
+
+  // function selectWidths() {
+  //   if (window.innerWidth > 1400) {
+  //     const num = 50;
+  //     return num;
+  //   } else if (window.innerWidth > 1200) {
+  //     const num = 50;
+  //     return num;
+  //   } else if (window.innerWidth > 992) {
+  //     const num = 50;
+  //     return num;
+  //   } else if (window.innerWidth > 768) {
+  //     const num = 50;
+  //     return num;
+  //   } else if (window.innerWidth > 540) {
+  //     const num = 50;
+  //     return num;
+  //   } else {
+  //     const num = 50;
+  //     return num;
+  //   }
+  // }
+
+  const handleScroll = () => {
+    const scrollLocale = window.scrollY;
+    setScroll(scrollLocale);
+    if (scrollLocale > 200) {
+      gsap.to(".twoRibOne", { x: "50vw", duration: 1.5 });
+      gsap.to(".twoRibTwo", {
+        x: "-50vw",
+        duration: 1.5,
+      });
+      gsap.to(".twoRibThree", {
+        x: "100vw",
+        duration: 1.5,
+      });
+    }
+  };
 
   return (
     <section className="mt-5 sectAbout">
