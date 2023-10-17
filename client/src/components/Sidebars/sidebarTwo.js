@@ -30,13 +30,7 @@ function SidebarTwo({ screenWidth, breakpoint }) {
 
   return (
     <section className="mt-5 sectAbout">
-      <div className="twoRibOne">
-        {/* <Carousel
-          firstPhoto={vertOne}
-          secondPhoto={vertTwo}
-          thirdPhoto={vertThree}
-        ></Carousel> */}
-      </div>
+      <div className="twoRibOne"></div>
 
       <div className="twoRibTwo">
         <p className="topOrnament">OUR</p>
