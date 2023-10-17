@@ -110,6 +110,7 @@
     top: 35vh;
     left: 13vw;
     z-index: 3;
+    /* transform: rotate(30deg); */
   }
 
   .mediaHero {
