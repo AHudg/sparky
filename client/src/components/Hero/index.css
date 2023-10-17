@@ -208,33 +208,47 @@
   }
 
   .flame {
-    width: 300px;
-    right: -20vw;
-    bottom: -10vh;
+    width: 350px;
+    right: -10vw;
+    bottom: 0vh;
     z-index: 1;
     opacity: 0.75;
+  }
+
+  .coa {
+    position: absolute;
+    top: 30vh;
+    right: 0;
+    z-index: 2;
   }
 
   .coa p {
     font-size: 18px;
     width: 325px;
-    position: absolute;
-    top: 30vh;
-    right: 5vw;
-    z-index: 2;
   }
 
   .coa a {
     width: 150px;
-    position: absolute;
-    top: 50vh;
-    right: 15vw;
-    z-index: 2;
   }
 }
 
 @media screen and (min-width: 1200px) {
+  .coa p {
+    width: 400px;
+  }
+
+  .coa a {
+    width: 200px;
+  }
 }
 
 @media screen and (min-width: 1400px) {
+  .coa {
+    top: 35vh;
+    right: 10vw;
+  }
+
+  .coa p {
+    width: 500px;
+  }
 }

@@ -36,12 +36,12 @@ function Hero({
           <img src={accent} className={accentClass} />
         </div>
         <div className="col-12 col-lg-5 row text-center justify-content-center coa">
-          <p className="col-12">
+          <p>
             Cheering you on for your next DIY, we illuminate your interest and
             encourage you to get out and go do! Here is your spark, now ignite
             your inspiration.
           </p>
-          <a className="col-6 mt-4 buttonBlog" href="/blog">
+          <a className="col-6 mt-4" href="/blog">
             Explore!
           </a>
         </div>
