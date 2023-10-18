@@ -58,7 +58,7 @@ function Blog() {
         accent={handFan}
       />
 
-      <div className={`mt-4 py-3 ${theme}OpaqueBg`}>
+      <div className="mt-4 py-3 OpaqueBg">
         <div className="row mx-3 justify-content-end align-items-center">
           <input className="col-10 searchBar" placeholder="Search..."></input>
           <i className="col-2 fa-solid fa-magnifying-glass searchEmblem"></i>
@@ -70,7 +70,9 @@ function Blog() {
             <option>None</option>
             <optgroup label="Categories">
               {optionObj.map((option) => (
-                <option value={option.tagName}>{option.displayName}</option>
+                <option value={option.tagName} key={option.tagName}>
+                  {option.displayName}
+                </option>
               ))}
             </optgroup>
           </select>
