@@ -48,7 +48,7 @@ function Blog() {
   }
 
   return (
-    <section>
+    <div>
       <Hero
         media="video"
         src={bgVideo}
@@ -59,7 +59,7 @@ function Blog() {
         accent={handFan}
       />
 
-      <div className="mt-4 py-3 OpaqueBg">
+      {/* <div className="mt-4 py-3 opaqueBg">
         <div className="row mx-3 justify-content-end align-items-center">
           <input className="col-10 searchBar" placeholder="Search..."></input>
           <i className="col-2 fa-solid fa-magnifying-glass searchEmblem"></i>
@@ -78,7 +78,7 @@ function Blog() {
             </optgroup>
           </select>
         </div>
-      </div>
+      </div> */}
 
       <main className="container">
         {data.allPost.map((post, i) => (
@@ -91,7 +91,7 @@ function Blog() {
           ></Post>
         ))}
       </main>
-    </section>
+    </div>
   );
 }
 

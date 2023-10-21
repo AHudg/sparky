@@ -10,7 +10,7 @@
   --dropshadow: rgba(0, 0, 0, 0.5);
 }
 
-.OpaqueBg {
+.opaqueBg {
   background-color: var(--mist);
   position: relative;
 }

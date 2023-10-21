@@ -15,8 +15,9 @@
   position: relative;
 }
 
-.thumbnail {
-  height: 200px;
+.postVideo {
+  width: 100%;
+  height: 315px;
 }
 
 .title {
@@ -24,14 +25,14 @@
   color: var(--aqua);
 }
 
-.postedOn {
-  font-size: 0.8rem;
-  color: var(--teal);
-}
-
 .description {
   height: 50px;
   overflow-y: hidden;
+}
+
+.pageBreak {
+  position: relative;
+  margin-top: 10px;
 }
 
 .viewable {
@@ -43,7 +44,7 @@
 
 .border {
   height: 5px;
-  width: 65vw;
+  width: 100%;
   background-color: var(--teal);
   position: absolute;
   bottom: 10px;
@@ -52,19 +53,25 @@
 }
 
 @media screen and (min-width: 575px) {
-  .post {
-    height: 500px;
-  }
-
-  .thumbnail {
-    height: 300px;
+  .postVideo {
+    height: 375px;
   }
 }
 
 @media screen and (min-width: 768px) {
+  .postVideo {
+    height: 400px;
+  }
 }
 
 @media screen and (min-width: 992px) {
+  .postVideo {
+    width: 60%;
+  }
+
+  .description {
+    overflow-y: visible;
+  }
 }
 
 @media screen and (min-width: 1200px) {
