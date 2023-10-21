@@ -51,7 +51,7 @@ function About(screenWidth) {
     const newSquare = createSquare();
     const animationEl = document.getElementsByClassName("animation");
     console.log(animationEl[0]);
-    ReactDOM.render(newSquare, animationEl[0]);
+    // ReactDOM.render(newSquare, animationEl[0]);
   }
 
   // let squareGenerator = setInterval(() => {
@@ -76,7 +76,7 @@ function About(screenWidth) {
         </ul>
       </div>
 
-      <section className="aboutSect">
+      <section className="container aboutSect">
         <article id="importance">
           <h2>Importance of Inspiration</h2>
           <p>
@@ -90,7 +90,7 @@ function About(screenWidth) {
           </p>
         </article>
 
-        <article id="ourStory">
+        <article id="ourStory" className="text-lg-end">
           <h2>Who We Are</h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -118,14 +118,14 @@ function About(screenWidth) {
       </section>
 
       <div className="animation row justify-content-around">
-        <StartSquares />
-        {/* {colors.map((classes, i) => (
+        {/* <StartSquares /> */}
+        {colors.map((classes, i) => (
           <div
             className={classes.color + " " + classes.size}
             key={`color${i}`}
             data-tag={`color${i}`}
           ></div>
-        ))} */}
+        ))}
       </div>
     </main>
   );
