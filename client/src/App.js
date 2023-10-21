@@ -22,6 +22,7 @@ import Contact from "./components/Contact";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
+  // uri: "localhost:3001/graphql",
 });
 
 const client = new ApolloClient({

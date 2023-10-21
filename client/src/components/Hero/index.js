@@ -13,7 +13,7 @@ function Hero({
   accent,
   screenWidth,
 }) {
-  const [rotate, setRotate] = useState(0);
+  // const [rotate, setRotate] = useState(0);
 
   // useEffect(() => {
   //   const rotateInterval = setInterval((screenWidth) => {
@@ -23,11 +23,14 @@ function Hero({
   //   }, 1000);
   // });
 
+  const screenW = window.innerWidth;
+  console.log(screenW);
+
   return (
-    <section className={screenWidth > 540 && "container"}>
+    <section className={screenW > 540 && "container"}>
       <div className="row sectHero">
         <div className="col-12 col-lg-5 collage">
-          {screenWidth >= 540 && (
+          {screenW >= 540 && (
             <div>
               <div className="squareOne"></div>
               <div className="squareTwo"></div>
@@ -53,9 +56,13 @@ function Hero({
             encourage you to get out and go do! Here is your spark, now ignite
             your inspiration.
           </p>
-          <a className="col-6 mt-4" href="/blog">
-            Explore!
-          </a>
+          {window.location.pathname === "/" ? (
+            <a className="col-6 mt-4" href="/blog">
+              Explore!
+            </a>
+          ) : (
+            ""
+          )}
         </div>
       </div>
     </section>

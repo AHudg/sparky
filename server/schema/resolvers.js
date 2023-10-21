@@ -1,5 +1,6 @@
 // import { Post } from "../models/Post.js";
 const User = require("../models/User");
+const Tag = require("../models/Tag");
 const Post = require("../models/Post");
 
 const resolvers = {
@@ -15,6 +16,17 @@ const resolvers = {
       }
     },
 
+    tags: async () => {
+      try {
+        const tagData = await Tag.find({});
+        return tagData;
+      } catch {
+        throw new Error(
+          "Apologies. Could not connect to the database. Please let us know that this happened!"
+        );
+      }
+    },
+
     allPost: async () => {
       try {
         const postData = await Post.find({});
@@ -26,11 +38,11 @@ const resolvers = {
       }
     },
 
-    tagPost: async (parent, { tags }) => {
+    tagPost: async (parent, { ...tags }) => {
+      console.log(tags);
       try {
         if (tags) {
-          console.log(tags);
-          const postData = await Post.find({ tags });
+          const postData = await Post.find({ tags: tags });
           return postData;
         }
       } catch {
@@ -53,6 +65,41 @@ const resolvers = {
   },
 
   Mutation: {
+    addTag: async (parent, args) => {
+      try {
+        const tagData = await Tag.create(args);
+        return tagData;
+      } catch {
+        throw new Error("Could not add tag to the database.");
+      }
+    },
+
+    removeTag: async (parent, { tagId }) => {
+      try {
+        const tagData = await Tag.findByIdAndDelete({ _id: tagId });
+        return tagData;
+      } catch {
+        throw new Error(
+          "Could not remove tag from the database. Double check that the tagId is correct."
+        );
+      }
+    },
+
+    editTag: async (parent, { tagId, name, posts }) => {
+      try {
+        const tagData = await Tag.findByIdAndUpdate(
+          { _id: tagId },
+          { name: name, posts: posts },
+          { new: true }
+        );
+        return tagData;
+      } catch {
+        throw new Error(
+          "Could not locate/edit desired tag within the database."
+        );
+      }
+    },
+
     addPost: async (parent, args) => {
       try {
         const postData = await Post.create(args);
@@ -61,6 +108,7 @@ const resolvers = {
         throw new Error("Could not add post to the database.");
       }
     },
+
     removePost: async (parent, { postId, title, description, url, tags }) => {
       try {
         const postData = await Post.findByIdAndDelete(
@@ -74,6 +122,7 @@ const resolvers = {
         );
       }
     },
+
     editPost: async (parent, { postId, title, description, url, tags }) => {
       try {
         const postData = await Post.findByIdAndUpdate(

@@ -20,9 +20,6 @@
   position: relative;
   bottom: 1.5rem;
   z-index: 5;
-}
-
-.ornamentRight {
   text-align: end;
 }
 
@@ -35,25 +32,8 @@
 }
 
 .hands {
-  position: absolute;
-  display: inline;
-  right: 0px;
-  bottom: -40px;
-  width: 175px;
-  padding: 0;
-  overflow-x: hidden;
-  filter: drop-shadow(-3px 3px 4px var(--dropshadow));
-}
-
-.infinity {
-  position: absolute;
-  display: inline;
-  right: 10px;
-  top: 60vh;
-  width: 175px;
-  padding: 0;
-  overflow-x: hidden;
-  filter: drop-shadow(-3px 3px 4px var(--dropshadow));
+  width: 200px;
+  transform: rotate(15deg);
 }
 
 .coa {
@@ -110,7 +90,6 @@
     top: 35vh;
     left: 13vw;
     z-index: 3;
-    /* transform: rotate(30deg); */
   }
 
   .mediaHero {
@@ -132,6 +111,10 @@
   .flame {
     bottom: -50px;
     width: 175px;
+  }
+
+  .hands {
+    width: 225px;
   }
 }
 
@@ -175,6 +158,12 @@
     right: 0;
     bottom: -30px;
   }
+
+  .hands {
+    transform: scaleX(-1);
+    width: 250px;
+    bottom: 10px;
+  }
 }
 
 @media screen and (min-width: 992px) {
@@ -211,14 +200,19 @@
   .flame {
     width: 350px;
     right: -10vw;
-    bottom: 0vh;
+    bottom: -30px;
     z-index: 1;
     opacity: 0.75;
   }
 
+  .hands {
+    width: 325px;
+    right: -20px;
+  }
+
   .coa {
     position: absolute;
-    top: 30vh;
+    top: 40vh;
     right: 0;
     z-index: 2;
   }
@@ -234,6 +228,15 @@
 }
 
 @media screen and (min-width: 1200px) {
+  .hands {
+    width: 350px;
+    right: -30px;
+  }
+
+  .coa {
+    right: 80px;
+  }
+
   .coa p {
     width: 400px;
   }
@@ -244,6 +247,10 @@
 }
 
 @media screen and (min-width: 1400px) {
+  .hands {
+    width: 400px;
+    right: -150px;
+  }
   .coa {
     top: 35vh;
     right: 10vw;

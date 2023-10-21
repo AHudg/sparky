@@ -12,20 +12,15 @@ const postSchema = new Schema({
     require: true,
     trim: true,
   },
-  thumbnail: {
-    type: String,
-    require: true,
-  },
   url: {
     type: String,
     require: true,
   },
-  length: {
-    type: String,
-  },
   tags: [
     {
-      type: String,
+      type: Schema.Types.ObjectId,
+      ref: "Tag",
+      require: true,
     },
   ],
 });

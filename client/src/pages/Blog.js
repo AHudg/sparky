@@ -1,5 +1,4 @@
-import React, { useContext } from "react";
-import ThemeContext from "../components/ThemeContext";
+import React from "react";
 import "./Blog.css";
 import Hero from "../components/Hero";
 import Loading from "../components/Loading";
@@ -35,10 +34,12 @@ function Blog() {
     },
   ];
 
-  const { theme } = useContext(ThemeContext);
-
+  // if (window.location.pathname === "/blog") {
+  //   const query = QUERY_ALLPOST;
+  // } else {
+  //   const query = QUERY_TAGPOST;
+  // }
   const { loading, error, data } = useQuery(QUERY_ALLPOST);
-  console.log(data);
   if (loading) {
     return <Loading></Loading>;
   }
@@ -51,10 +52,10 @@ function Blog() {
       <Hero
         media="video"
         src={bgVideo}
-        firstLine="MOST"
-        secondLine="RECENT"
-        orientation="ornamentHero"
-        accentClass="hands"
+        firstLine="INTERIOR"
+        secondLine="DESIGN"
+        orientation="ornamentHero ornamentLeft"
+        accentClass="flame hands"
         accent={handFan}
       />
 

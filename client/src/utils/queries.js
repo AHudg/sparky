@@ -7,7 +7,6 @@ export const QUERY_ALLPOST = gql`
       title
       description
       url
-      tags
     }
   }
 `;

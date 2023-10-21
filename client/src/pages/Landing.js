@@ -2,9 +2,7 @@ import React from "react";
 import "./Landing.css";
 
 import Hero from "../components/Hero";
-import SidebarOne from "../components/Sidebars/sidebarOne";
 import SidebarTwo from "../components/Sidebars/sidebarTwo";
-import SidebarThree from "../components/Sidebars/sidebarThree";
 
 import flame from "../assets/flame.png";
 import bgVideo from "../assets/bubbles.mp4";
@@ -34,14 +32,6 @@ function Landing({ screenWidth, breakpoint }) {
         screenWidth={screenWidth}
         breakpoint={breakpoint}
       ></SidebarTwo>
-      {/* <SidebarThree
-        screenWidth={screenWidth}
-        breakpoint={breakpoint}
-      ></SidebarThree>
-      <SidebarOne
-        screenWidth={screenWidth}
-        breakpoint={breakpoint}
-      ></SidebarOne> */}
     </main>
   );
 }
