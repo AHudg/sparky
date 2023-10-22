@@ -10,8 +10,6 @@ export default function Hamburger() {
   const [blogStatus, setBlogStatus] = useState("false");
   const [aboutStatus, setAboutStatus] = useState("false");
 
-  const { theme } = useContext(ThemeContext);
-  const { handleTheme } = useContext(ThemeContext);
   const { open } = useContext(ThemeContext);
   const { setOpen } = useContext(ThemeContext);
 
@@ -28,6 +26,7 @@ export default function Hamburger() {
       initialRender.current = false;
     } else {
       if (open) {
+        openTl.to(".menu", { display: "block" });
         openTl.to(".ribbonFive", { x: "-100vw" });
         openTl.to(".ribbonFour", { x: "-100vw" });
         openTl.to(".ribbonThree", { x: "-100vw" });
@@ -45,6 +44,7 @@ export default function Hamburger() {
         closeTl.to(".hamTop", { rotate: 0, y: 0 });
         closeTl.to(".hamBottom", { rotate: 0, y: 0 });
         closeTl.to(".hamMiddle", { backgroundColor: "rgba( 192, 58, 0, 1" });
+        closeTl.to(".menu", { display: "none" });
       }
     }
   }, [open]);
@@ -75,31 +75,6 @@ export default function Hamburger() {
       }
     }
   }, [blogStatus]);
-
-  // Controlling the About buttons
-  useEffect(() => {
-    if (!blogStatus) {
-      setBlogStatus(!blogStatus);
-    }
-
-    if (initialRender.current) {
-      // initialRender.current = false;
-    } else {
-      if (!aboutStatus) {
-        gsap.to(".ribbonTwo", { height: "50vh" });
-        gsap.to(".rightUp", { y: "30vh" });
-        gsap.to(".ribbonThree", { y: "30vh" });
-        gsap.to(".ribbonFour", { y: "30vh" });
-        gsap.to(".ribbonFive", { y: "30vh" });
-      } else {
-        gsap.to(".ribbonTwo", { height: "20vh" });
-        gsap.to(".rightUp", { y: 0 });
-        gsap.to(".ribbonThree", { y: 0 });
-        gsap.to(".ribbonFour", { y: 0 });
-        gsap.to(".ribbonFive", { y: 0 });
-      }
-    }
-  }, [aboutStatus]);
 
   // Changes state for hamburger being open
   const handleMenu = () => {
@@ -136,7 +111,7 @@ export default function Hamburger() {
       {/* physical hamburger menu */}
       <nav className="menu">
         <div className="ribbonOne">
-          <a href="/blog" onClick={handleNavClick} className="menuWord leftUp">
+          <a onClick={handleNavClick} className="menuWord leftUp">
             Blog
           </a>
           <div className="row Links">
