@@ -3,6 +3,9 @@ import "../Header/index.css";
 import { gsap } from "gsap";
 import ThemeContext from "../ThemeContext";
 import { useNavigate } from "react-router-dom";
+import { useQuery } from "@apollo/client";
+import { QUERY_ALLTAGS } from "../../utils/queries";
+import Loading from "../Loading";
 
 export default function Hamburger() {
   // TODO Bugs present. If double clicked, the animation glitches
@@ -54,9 +57,8 @@ export default function Hamburger() {
     if (!aboutStatus) {
       setAboutStatus(!aboutStatus);
     }
-
     if (initialRender.current) {
-      // initialRender.current = false;
+      initialRender.current = false;
     } else {
       if (!blogStatus) {
         gsap.to(".ribbonOne", { height: "60vh" });
@@ -92,12 +94,15 @@ export default function Hamburger() {
     }
   };
 
-  // Routes the user to the selected path chosen from the blog/about drop down menus
-  const navigateSelections = (event) => {
-    navigate(`/blog/${event.target.dataset.tag}`);
-    setBlogStatus(false);
-    setOpen(false);
-  };
+  const { loading, error, data } = useQuery(QUERY_ALLTAGS);
+  if (loading) {
+    return <Loading></Loading>;
+  }
+  if (error) {
+    console.log("error: " + error.message);
+  }
+
+  const tagData = data.tags;
 
   return (
     // hamburger icon on top left header
@@ -115,101 +120,39 @@ export default function Hamburger() {
             Blog
           </a>
           <div className="row Links">
-            <a
-              className="col-6 text-center blogAref"
-              onClick={navigateSelections}
-              data-tag="interior"
-            >
-              Refurbishing the Interior
-            </a>
-            <a
-              className="col-6 text-center blogAref"
-              onClick={navigateSelections}
-              data-tag="outdoor"
-            >
-              Outdoor Renovation
-            </a>
-            <a
-              className="col-6 text-center blogAref"
-              onClick={navigateSelections}
-              data-tag="best"
-            >
-              Best of the Best
-            </a>
-            <a
-              className="col-6 text-center blogAref"
-              onClick={navigateSelections}
-              data-tag="rate"
-            >
-              Rate the Wait
-            </a>
-            <a
-              className="col-6 text-center blogAref"
-              onClick={navigateSelections}
-              data-tag="raccoons"
-            >
-              Raccoons
-            </a>
-            <a
-              className="col-6 text-center blogAref"
-              onClick={navigateSelections}
-              data-tag="inspiration"
-            >
-              Inspirations
-            </a>
-            <a
-              className="col-6 text-center blogAref"
-              onClick={navigateSelections}
-              data-tag="finds"
-            >
-              Good Finds
-            </a>
-            <a
-              className="col-6 text-center blogAref"
-              onClick={navigateSelections}
-              data-tag="lifting"
-            >
-              Lifting Up Others
-            </a>
+            {tagData.map((element) => {
+              return (
+                <a
+                  href={"/blog/" + element.name}
+                  className="col-6 text-center blogAref"
+                >
+                  {element.name}
+                </a>
+              );
+            })}
           </div>
         </div>
 
         <div className="ribbonTwo">
-          <a
-            href="/about"
-            className="menuWord rightUp"
-            // onClick={navigateSelections}
-          >
+          <a href="/about" className="menuWord rightUp">
             About
           </a>
         </div>
 
         <div className="ribbonThree">
-          <a
-            href="/store"
-            className="menuWord leftDown"
-            // onClick={navigateSelections}
-          >
+          <a href="/store" className="menuWord leftDown">
             Store
           </a>
         </div>
 
         <div className="ribbonFour">
-          <a
-            href="/donate"
-            className="menuWord rightDown"
-            // onClick={navigateSelections}
-          >
+          <a href="/donate" className="menuWord rightDown">
             Donate
           </a>
         </div>
 
         <div className="ribbonFive">
-          <a
-            href="/contact"
-            className="menuWord contact"
-            // onClick={navigateSelections}
-          >
+          <a href="/contact" className="menuWord contact">
             Contact
           </a>
         </div>

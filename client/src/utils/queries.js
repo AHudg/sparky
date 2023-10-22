@@ -1,5 +1,14 @@
 import { gql } from "@apollo/client";
 
+export const QUERY_ALLTAGS = gql`
+  query Query {
+    tags {
+      _id
+      name
+    }
+  }
+`;
+
 export const QUERY_ALLPOST = gql`
   query allPost {
     allPost {
