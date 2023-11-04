@@ -1,42 +1,16 @@
 import React from "react";
 import "./Blog.css";
-import Hero from "../components/Hero";
-import Loading from "../components/Loading";
 
-import Post from "../components/Post";
-import { useQuery } from "@apollo/client";
-import { useParams } from "react-router-dom";
-import { QUERY_ALLPOST, QUERY_IDTAG } from "../utils/queries";
+import Hero from "../components/Hero";
+import AllBlog from "../components/allBlog";
+import TagBlog from "../components/tagBlog";
 
 import handFan from "../assets/handFan.png";
 import bgVideo from "../assets/bubbles.mp4";
 
 function Blog() {
-  // let query;
-
-  const { id: tagParam } = useParams();
-
-  // const tagParam = useParams();
-  // console.log("tagParam" + tagParam);
-
-  // if (window.location.pathname === "/blog") {
-  // query = QUERY_ALLPOST;
-  // } else {
-  //   query = QUERY_IDTAG;
-  // }
-
-  const { loading, error, data } = useQuery(QUERY_IDTAG, {
-    variables: { id: tagParam },
-  });
-
-  if (loading) {
-    return <Loading></Loading>;
-  }
-  if (error) {
-    console.log("error: " + error.message);
-  }
-
-  console.log(data.idTag.posts[0]);
+  const url = window.location.pathname;
+  console.log(url);
 
   return (
     <div>
@@ -72,17 +46,7 @@ function Blog() {
       </div> */}
 
       <main className="container">
-        {data.idTag.posts.map((post, i) => {
-          return (
-            <Post
-              title={post.title}
-              description={post.description}
-              url={post.url}
-              postedOn={post.postedOn}
-              iterator={i}
-            ></Post>
-          );
-        })}
+        {url === "/blog" ? <AllBlog></AllBlog> : <TagBlog></TagBlog>}
       </main>
     </div>
   );
