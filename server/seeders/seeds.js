@@ -96,8 +96,6 @@ db.once("open", async () => {
             new: true,
           }
         );
-
-        console.log(tags);
       }
     }
     console.log("Tags Updates");
