@@ -2,23 +2,19 @@ import React, { useState, useEffect, useContext, useRef } from "react";
 import "../Header/index.css";
 import { gsap } from "gsap";
 import ThemeContext from "../ThemeContext";
-import { useNavigate } from "react-router-dom";
 import { useQuery } from "@apollo/client";
-import { QUERY_ALLTAGS } from "../../utils/queries";
+import { QUERY_ALLTAG } from "../../utils/queries";
 import Loading from "../Loading";
 
 export default function Hamburger() {
   // TODO Bugs present. If double clicked, the animation glitches
   // This causes visual bugs.
   const [blogStatus, setBlogStatus] = useState("false");
-  const [aboutStatus, setAboutStatus] = useState("false");
 
   const { open } = useContext(ThemeContext);
   const { setOpen } = useContext(ThemeContext);
 
   const initialRender = useRef(true);
-
-  const navigate = useNavigate();
 
   const openTl = gsap.timeline();
   const closeTl = gsap.timeline();
@@ -54,9 +50,6 @@ export default function Hamburger() {
 
   // Controlling the Blog buttons
   useEffect(() => {
-    if (!aboutStatus) {
-      setAboutStatus(!aboutStatus);
-    }
     if (initialRender.current) {
       initialRender.current = false;
     } else {
@@ -94,7 +87,7 @@ export default function Hamburger() {
     }
   };
 
-  const { loading, error, data } = useQuery(QUERY_ALLTAGS);
+  const { loading, error, data } = useQuery(QUERY_ALLTAG);
   if (loading) {
     return <Loading></Loading>;
   }
@@ -102,7 +95,7 @@ export default function Hamburger() {
     console.log("error: " + error.message);
   }
 
-  const tagData = data.tags;
+  const tagData = data.allTag;
 
   return (
     // hamburger icon on top left header
@@ -116,14 +109,14 @@ export default function Hamburger() {
       {/* physical hamburger menu */}
       <nav className="menu">
         <div className="ribbonOne">
-          <a onClick={handleNavClick} className="menuWord leftUp">
+          <p onClick={handleNavClick} className="menuWord leftUp">
             Blog
-          </a>
+          </p>
           <div className="row Links">
             {tagData.map((element) => {
               return (
                 <a
-                  href={"/blog/" + element.name}
+                  href={"/blog/" + element._id}
                   className="col-6 text-center blogAref"
                 >
                   {element.name}

@@ -90,7 +90,7 @@ function App() {
                 />
                 {/* This is for the desktop version flame selector general page */}
                 <Route path="/blog" element={<Blog />} />
-                <Route path="/blog/:tag" element={<Blog />} />
+                <Route path="/blog/:id" element={<Blog />} />
                 <Route path="/donate" element={<Blog />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="*" element={<h1>Oops! No content here!</h1>} />

@@ -1,4 +1,3 @@
-// import { Post } from "../models/Post.js";
 const User = require("../models/User");
 const Tag = require("../models/Tag");
 const Post = require("../models/Post");
@@ -16,13 +15,24 @@ const resolvers = {
       }
     },
 
-    tags: async () => {
+    allTag: async () => {
       try {
-        const tagData = await Tag.find({});
+        const tagData = await Tag.find({}).populate("posts");
         return tagData;
       } catch {
         throw new Error(
           "Apologies. Could not connect to the database. Please let us know that this happened!"
+        );
+      }
+    },
+
+    idTag: async (parent, { _id }) => {
+      try {
+        const postData = await Tag.findById(_id).populate("posts");
+        return postData;
+      } catch {
+        throw new Error(
+          "Apologies. Could not locate the specific post you were searching for. Let us know so we can fix it!"
         );
       }
     },
@@ -38,21 +48,8 @@ const resolvers = {
       }
     },
 
-    tagPost: async (parent, { ...tags }) => {
-      console.log(tags);
-      try {
-        if (tags) {
-          const postData = await Post.find({ tags: tags });
-          return postData;
-        }
-      } catch {
-        throw new Error(
-          "Apologies. Could not search via the requested tag. Let us know so we can fix it!"
-        );
-      }
-    },
-
     idPost: async (parent, { _id }) => {
+      console.log(_id);
       try {
         const postData = await Post.findById(_id);
         return postData;

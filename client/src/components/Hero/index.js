@@ -24,7 +24,6 @@ function Hero({
   // });
 
   const screenW = window.innerWidth;
-  console.log(screenW);
 
   return (
     <section className={screenW > 540 && "container"}>

@@ -5,43 +5,30 @@ import Loading from "../components/Loading";
 
 import Post from "../components/Post";
 import { useQuery } from "@apollo/client";
-import { QUERY_ALLPOST, QUERY_ALLTAGS } from "../utils/queries";
+import { useParams } from "react-router-dom";
+import { QUERY_ALLPOST, QUERY_IDTAG } from "../utils/queries";
 
 import handFan from "../assets/handFan.png";
 import bgVideo from "../assets/bubbles.mp4";
 
 function Blog() {
-  // const optionObj = [
-  //   {
-  //     tagName: "raccoon",
-  //     displayName: "Raccoons",
-  //   },
-  //   {
-  //     tagName: "refurbish",
-  //     displayName: "Refurbishing",
-  //   },
-  //   {
-  //     tagName: "upholster",
-  //     displayName: "Re-Upholsterin",
-  //   },
-  //   {
-  //     tagName: "garden",
-  //     displayName: "Gardening",
-  //   },
-  //   {
-  //     tagName: "exercise",
-  //     displayName: "Exercise",
-  //   },
-  // ];
+  // let query;
+
+  const { id: tagParam } = useParams();
+
+  // const tagParam = useParams();
+  // console.log("tagParam" + tagParam);
 
   // if (window.location.pathname === "/blog") {
-  //   const query = QUERY_ALLPOST;
+  // query = QUERY_ALLPOST;
   // } else {
-  //   const query = QUERY_TAGPOST;
+  //   query = QUERY_IDTAG;
   // }
 
-  // const { tagLoading, tagError, tagData } = useQuery(QUERY_ALLTAGS);
-  const { loading, error, data } = useQuery(QUERY_ALLPOST);
+  const { loading, error, data } = useQuery(QUERY_IDTAG, {
+    variables: { id: tagParam },
+  });
+
   if (loading) {
     return <Loading></Loading>;
   }
@@ -49,7 +36,7 @@ function Blog() {
     console.log("error: " + error.message);
   }
 
-  console.log(data);
+  console.log(data.idTag.posts[0]);
 
   return (
     <div>
@@ -85,7 +72,7 @@ function Blog() {
       </div> */}
 
       <main className="container">
-        {data.allPost.map((post, i) => {
+        {data.idTag.posts.map((post, i) => {
           return (
             <Post
               title={post.title}

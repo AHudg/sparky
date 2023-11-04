@@ -1,44 +1,57 @@
 import { gql } from "@apollo/client";
 
-export const QUERY_ALLTAGS = gql`
-  query Query {
-    tags {
-      _id
-      name
-    }
-  }
-`;
-
 export const QUERY_ALLPOST = gql`
-  query allPost {
+  query AllPost {
     allPost {
       _id
-      title
       description
-      url
-    }
-  }
-`;
-
-export const QUERY_TAGPOST = gql`
-  query tagPost($tags: String!) {
-    tagPost(tags: $tags) {
-      _id
+      tagIds
       title
-      description
       url
-      tags
     }
   }
 `;
 
 export const QUERY_IDPOST = gql`
-  query idPost($_id: ID!) {
-    idPost(_id: $_id)
-    _id
-    title
-    description
-    url
-    tags
+  query IdPost($id: ID!) {
+    idPost(_id: $id) {
+      _id
+      description
+      tagIds
+      title
+      url
+    }
+  }
+`;
+
+export const QUERY_ALLTAG = gql`
+  query AllTag {
+    allTag {
+      _id
+      name
+      posts {
+        _id
+        description
+        tagIds
+        title
+        url
+      }
+    }
+  }
+`;
+
+export const QUERY_IDTAG = gql`
+  query IdTag($id: ID!) {
+    idTag(_id: $id) {
+      _id
+      name
+      posts {
+        _id
+        description
+        tagIds
+        title
+        url
+      }
+    }
   }
 `;

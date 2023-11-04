@@ -9,6 +9,7 @@ const typeDefs = gql`
   type Tag {
     _id: ID!
     name: String
+    posts: [Post]
   }
 
   type Post {
@@ -16,33 +17,32 @@ const typeDefs = gql`
     title: String!
     description: String
     url: String!
-    tags: [Tag]
+    tagIds: [String]
   }
 
   type Query {
     user: [User]
 
-    tags: [Tag]
+    allTag: [Tag]
+
+    idTag(_id: ID!): Tag!
 
     allPost: [Post!]!
-
-    tagPost(tagName: String): [Post!]!
 
     idPost(_id: ID!): Post!
   }
 
   type Mutation {
     addTag(name: String!): Tag
+    removeTag(_id: ID!): Tag
 
-    removeTag(tagId: ID!): Tag
-
-    editTag(tagId: ID!, name: String!): Tag
+    editTag(_id: ID!, name: String!): Tag
 
     addPost(
       title: String!
       description: String!
       url: String!
-      tags: [String!]
+      tags: [String!]!
     ): Post
 
     removePost(postId: ID!): Post
@@ -52,7 +52,7 @@ const typeDefs = gql`
       title: String!
       description: String!
       url: String!
-      tags: [String]
+      tags: [String!]!
     ): Post
   }
 `;

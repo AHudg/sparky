@@ -16,10 +16,9 @@ const postSchema = new Schema({
     type: String,
     require: true,
   },
-  tags: [
+  tagIds: [
     {
-      type: Schema.Types.ObjectId,
-      ref: "Tag",
+      type: String,
       require: true,
     },
   ],
