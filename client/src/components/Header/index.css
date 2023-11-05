@@ -194,12 +194,6 @@ h1 {
   padding-top: 5px;
 }
 
-.aboutAref {
-  color: var(--ember);
-  font-size: 1.2rem;
-  padding-top: 20px;
-}
-
 @media screen and (min-width: 575px) {
 }
 
