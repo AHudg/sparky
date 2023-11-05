@@ -18,7 +18,7 @@ import Header from "./components/Header";
 import Landing from "./pages/Landing";
 import About from "./pages/About";
 import Blog from "./pages/Blog";
-import Contact from "./components/Contact";
+import Contact from "./pages/Contact";
 import FourOhFour from "./pages/FourOhFour";
 
 const httpLink = createHttpLink({

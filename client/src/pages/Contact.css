@@ -1,0 +1,92 @@
+.contactContainer {
+  margin-top: 50px;
+}
+
+.contactTitle {
+  display: inline;
+  padding: 15px;
+  color: var(--dusty);
+  font-size: 25px;
+  position: relative;
+}
+
+.contactMessage {
+  margin: 40px 25px;
+}
+
+.contactIntro {
+  font-size: 30px;
+  color: var(--aqua);
+}
+
+.contactText {
+  color: var(--teal);
+  font-family: "Caveat", cursive;
+  font-size: 20px;
+}
+
+@media screen and (min-width: 575px) {
+  .contactTitle {
+    font-size: 40px;
+  }
+
+  .contactMessage {
+    margin: 60px 35px;
+  }
+
+  .contactIntro {
+    font-size: 35px;
+  }
+
+  .contactText {
+    font-size: 25px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .contactTitle {
+    padding: 25px;
+    font-size: 60px;
+    margin: 3px;
+  }
+
+  .contactMessage {
+    margin: 80px 50px;
+  }
+
+  .contactIntro {
+    font-size: 40px;
+  }
+
+  .contactText {
+    font-size: 30px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .contactTitle {
+    padding: 30px;
+    font-size: 70px;
+  }
+
+  .contactMessage {
+    margin: 100px 75px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .contactTitle {
+    padding: 30px;
+    font-size: 100px;
+  }
+
+  .contactMessage {
+    margin: 125px;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .contactMessage {
+    margin: 150px;
+  }
+}

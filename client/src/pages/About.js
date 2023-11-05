@@ -33,6 +33,7 @@ function About(screenWidth) {
     "--teal: rgb(22, 89, 74);",
     "--sandstone: rgb(249, 143, 69);",
     "--vermillion: rgb(196, 66, 26);",
+    "--ember: rgb(107, 32, 0);",
   ];
   const sizes = ["20px", "40px", "60px"];
 

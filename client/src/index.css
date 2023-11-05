@@ -1,6 +1,6 @@
 :root {
   font-size: 16px;
-  --ember: rgba(107, 32, 0, 0.1);
+  --ember: rgba(107, 32, 0, 1);
   --emberOp: rgba(107, 32, 0, 0.75);
 
   --vermillion: rgba(196, 66, 26, 1);
