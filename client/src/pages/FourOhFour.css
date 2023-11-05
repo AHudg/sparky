@@ -1,0 +1,206 @@
+:root {
+  --ember: rgba(107, 32, 0, 0.1);
+  --emberOp: rgba(107, 32, 0, 0.75);
+
+  --vermillion: rgba(196, 66, 26, 1);
+  --vermillionOp: rgba(196, 66, 26, 0.75);
+
+  --sandstone: rgba(249, 143, 69, 1);
+  --sandstoneOp: rgba(249, 143, 69, 0.75);
+
+  --dusty: rgba(254, 222, 197, 1);
+  --dustyOp: rgba(254, 222, 197, 0.75);
+
+  --mist: rgba(153, 207, 205, 1);
+  --mistOp: rgba(153, 207, 205, 0.75);
+
+  --aqua: rgba(18, 144, 142, 1);
+  --aquaOp: rgba(18, 144, 142, 0.75);
+
+  --teal: rgba(22, 89, 74, 1);
+  --tealOp: rgba(22, 89, 74, 0.75);
+}
+
+.numberContainer {
+  margin-top: 50px;
+}
+
+.numbers {
+  margin: 10px;
+  padding: 20px;
+  font-size: 80px;
+  font-family: "Accountant Signature";
+  display: inline;
+}
+
+.firstFour {
+  background-color: var(--sandstone);
+  color: var(--dusty);
+  filter: drop-shadow(7px 7px 0px var(--ember));
+}
+
+.oh {
+  background-color: var(--mist);
+  color: var(--dusty);
+  filter: drop-shadow(7px -7px 0px var(--teal));
+}
+
+.secondFour {
+  background-color: var(--vermillion);
+  color: var(--dusty);
+  filter: drop-shadow(7px 7px 0px var(--aqua));
+}
+
+.message {
+  margin: 40px;
+}
+
+.intro {
+  font-size: 25px;
+  color: var(--vermillion);
+}
+
+@media screen and (min-width: 540px) {
+  .numberContainer {
+    margin-top: 100px;
+  }
+
+  .numbers {
+    margin: 10px;
+    padding: 30px;
+    font-size: 120px;
+  }
+
+  .firstFour {
+    filter: drop-shadow(10px 10px 0px var(--ember));
+  }
+
+  .oh {
+    filter: drop-shadow(10px -10px 0px var(--teal));
+  }
+
+  .secondFour {
+    filter: drop-shadow(10px 10px 0px var(--aqua));
+  }
+
+  .message {
+    margin: 80px;
+  }
+
+  .intro {
+    font-size: 35px;
+  }
+
+  .message p {
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .numberContainer {
+    margin-top: 100px;
+  }
+
+  .numbers {
+    margin: 10px;
+    padding: 50px;
+    font-size: 150px;
+  }
+
+  .firstFour {
+    filter: drop-shadow(12px 12px 0px var(--ember));
+  }
+
+  .oh {
+    filter: drop-shadow(12px -12px 0px var(--teal));
+  }
+
+  .secondFour {
+    filter: drop-shadow(12px 12px 0px var(--aqua));
+  }
+
+  .message {
+    margin: 120px 90px;
+  }
+
+  .intro {
+    font-size: 60px;
+  }
+
+  .message p {
+    font-size: 30px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .numberContainer {
+    margin-top: 100px;
+  }
+
+  .numbers {
+    margin: 15px;
+    padding: 50px;
+    font-size: 200px;
+  }
+  .firstFour {
+    filter: drop-shadow(20px 20px 0px var(--ember));
+  }
+
+  .oh {
+    filter: drop-shadow(20px -20px 0px var(--teal));
+  }
+
+  .secondFour {
+    filter: drop-shadow(20px 20px 0px var(--aqua));
+  }
+
+  .message {
+    margin: 120px;
+  }
+
+  .intro {
+    font-size: 90px;
+  }
+
+  .message p {
+    font-size: 40px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .numberContainer {
+    margin-top: 100px;
+  }
+
+  .numbers {
+    margin: 15px;
+    padding: 50px;
+    font-size: 200px;
+  }
+  .firstFour {
+    filter: drop-shadow(20px 20px 0px var(--ember));
+  }
+
+  .oh {
+    filter: drop-shadow(20px -20px 0px var(--teal));
+  }
+
+  .secondFour {
+    filter: drop-shadow(20px 20px 0px var(--aqua));
+  }
+
+  .message {
+    margin: 120px;
+  }
+
+  .intro {
+    /* font-size: 90px; */
+  }
+
+  .message p {
+    font-size: 40px;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+}

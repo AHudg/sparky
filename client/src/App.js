@@ -19,6 +19,7 @@ import Landing from "./pages/Landing";
 import About from "./pages/About";
 import Blog from "./pages/Blog";
 import Contact from "./components/Contact";
+import FourOhFour from "./pages/FourOhFour";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -93,7 +94,7 @@ function App() {
                 <Route path="/blog/:id" element={<Blog />} />
                 <Route path="/donate" element={<Blog />} />
                 <Route path="/contact" element={<Contact />} />
-                <Route path="*" element={<h1>Oops! No content here!</h1>} />
+                <Route path="*" element={<FourOhFour />} />
               </Routes>
 
               <footer className="row justify-content-center text-center">

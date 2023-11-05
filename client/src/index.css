@@ -1,13 +1,28 @@
 :root {
   font-size: 16px;
-  --ember: rgb(107, 32, 0);
-  --vermillion: rgb(196, 66, 26);
-  --sandstone: rgb(249, 143, 69);
-  --dusty: rgb(254, 230, 210);
-  --mist: rgb(153, 207, 205);
-  --aqua: rgb(18, 144, 142);
-  --teal: rgb(22, 89, 74);
+  --ember: rgba(107, 32, 0, 0.1);
+  --emberOp: rgba(107, 32, 0, 0.75);
+
+  --vermillion: rgba(196, 66, 26, 1);
+  --vermillionOp: rgba(196, 66, 26, 0.75);
+
+  --sandstone: rgba(249, 143, 69, 1);
+  --sandstoneOp: rgba(249, 143, 69, 0.75);
+
+  --dusty: rgba(254, 222, 197, 1);
+  --dustyOp: rgba(254, 222, 197, 0.75);
+
+  --mist: rgba(153, 207, 205, 1);
+  --mistOp: rgba(153, 207, 205, 0.75);
+
+  --aqua: rgba(18, 144, 142, 1);
+  --aquaOp: rgba(18, 144, 142, 0.75);
+
+  --teal: rgba(22, 89, 74, 1);
+  --tealOp: rgba(22, 89, 74, 0.75);
+
   --dropshadow: rgba(0, 0, 0, 0.5);
+
   --accent: "AccountantSignature";
 }
 
