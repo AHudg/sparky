@@ -1,15 +1,7 @@
 /* Header.css */
 :root {
-  --dusty: rgb(254, 222, 197);
-  --sandstone: rgb(251, 171, 114);
-  --vermillion: rgb(196, 66, 26);
-  --ember: rgb(107, 32, 0);
-  --mist: rgb(153, 207, 205);
-  --aqua: rgb(18, 144, 142);
   --mistAqua: rgb(74, 159, 158);
   --aquaTeal: rgb(9, 109, 99);
-  --teal: rgb(22, 89, 74);
-  --dropshadow: rgba(0, 0, 0, 0.5);
 }
 
 /* Kindling header */

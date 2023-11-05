@@ -31,7 +31,7 @@ export default function Header({ screenWidth, breakpoint }) {
                   <a className="navWord">Store</a>
                 </li>
                 <li className="col-2">
-                  <a href="#contact" className="navWord">
+                  <a href="/contact" className="navWord">
                     Contact
                   </a>
                 </li>
